@@ -1,4 +1,4 @@
-import prisma from '@/prisma';
+import prisma from '../prisma';
 import { User } from '@prisma/client';
 import { NextFunction, Request, Response } from 'express';
 const getUserById = async(req:Request, res:Response, next:NextFunction)=>{

@@ -2,21 +2,25 @@ import request from "supertest";
 import app from "../src/app";
 import { describe, it } from "node:test";
 
-describe("email", () => {
-  it("should be send a new email", async () => {
+describe("user", () => {
+  it("should be create a user", async () => {
     // const expect = chai.expect;
     await request(app)
-      .post("/emails/send")
+      .post("/users")
       .send({
-        recipient: "test6@email.com",
-        subject: "Email Verification",
-        body: "Your verification is ${code}",
-        source: "user-registration"
+        authUserId: "ariful123",
+        name: "Md. Ariful Islam Raju",
+        email: "ariful123@gmail.com",
       })
       .expect(201);
   });
 
-  it("should all email", async () => {
-    await request(app).get("/emails").expect(200);
+  it("should be retrieve all user info", async () => {
+    await request(app).get("/users").expect(200);
+  }); 
+  
+  it("should be retrieve a user by id", async () => {
+    await request(app).get("/users/clwbzpxzb0000yb1tawll9agb").expect(200);
   });
+
 });

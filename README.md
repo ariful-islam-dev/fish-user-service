@@ -40,6 +40,6 @@
 
 ## Endpoints
 
-- [x] User Registration
-- [ ] User Login
-- [ ] Token Verification
+- [x] Create a new user
+- [ ] Retrieve all user info
+- [ ] Get a single user info by id
